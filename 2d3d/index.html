@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JonnyPeng:触摸屏幕，旋转飞机</title>
+  <style>
+    #box,#webgl3d,#webgl2d{
+      position:absolute;
+      width:100% !important;
+      height:100% !important;
+    }
+  </style>
+<head>
+</head>
+<body style="margin:0px">
+<div id="box">
+  <canvas id="webgl3d"></canvas>
+  <canvas id="webgl2d"></canvas>
+</div>
+<script src="../lib/js/jquery.min.js"></script>
+<script src="../lib/js/three.min.js"></script>
+<script src="../lib/js/DeviceOrientationControls.js"></script>
+<script src="../lib/js/pixi.min.js"></script>
+<script src="../lib/js/TweenMax.min.js"></script>
+<script>
+window.onload = function(){
+var webgl3d = document.getElementById("webgl3d");
+var webgl2d = document.getElementById("webgl2d");
+
+function threeRender(){
+  var renderer = new THREE.WebGLRenderer({canvas:webgl3d});
+  renderer.setSize(innerWidth,innerHeight);
+
+
+  renderer.setClearColor(0x000000);
+
+  var scene = new THREE.Scene();
+
+  var camera = new THREE.PerspectiveCamera(45,innerWidth/innerHeight,1,1000);
+  scene.add(camera);
+  camera.position.set(0,0,0);
+
+  var cover = new THREE.TextureLoader().load("images/vr.jpg");
+
+  var material = new THREE.MeshBasicMaterial({map:cover,side:1});
+
+  var sphere = new THREE.Mesh(
+    new THREE.SphereGeometry(2,100,100),
+    material
+  );
+
+  scene.add(sphere);
+
+  var orientation = new THREE.DeviceOrientationControls(camera);
+  orientation.enabled = true;
+  console.log(orientation);
+
+
+  ticker();
+  animate();
+
+  function ticker(){
+    requestAnimationFrame(ticker);
+    orientation.update();
+    renderer.render(scene,camera);
+  };
+
+  function animate(){
+    TweenMax.to(sphere.rotation,120,{
+      "y":(Math.PI/180)*360,
+      "repeat":-1,
+      "ease":Linear.easeNone
+    });
+  };
+};  //webgl3d end
+
+function pixiRender(){
+  var app = new PIXI.Application({view:webgl2d,transparent:true,width:640,height:1030});
+  var fight_fps;
+  var fight;
+
+  var game = {
+    "ready":function (){
+      fight_fps = [];
+      for(var i = 0;i < 30;i++){
+        i = (i < 10) ? "0" + i : i;
+        fight_fps.push(PIXI.Texture.fromFrame("rollSequence00" + i + ".png"));
+      };
+      game.start();
+    },
+    "start":function (){
+
+      var bg = new PIXI.Graphics();
+      bg.beginFill(0x000000).drawRect(0,0,640,1030);
+      bg.alpha = 0.5;
+
+      fight = new PIXI.extras.AnimatedSprite(fight_fps);
+      app.stage.addChild(bg,fight);
+
+      fight.loop = false;
+      fight.animationSpeed = 0.5;
+      fight.play();
+
+      var points = [
+        {x:-100,y:-100},
+        {x:524,y:252},
+        {x:332,y:1200},
+        {x:116,y:276},
+        {x:432,y:-200},
+        {x:632,y:48},
+        {x:600,y:1200},
+        {x:-32,y:192},
+        {x:-100,y:-100}
+      ];
+
+
+      TweenMax.to(fight,30,{
+        bezier:{
+          type:"quadratic",
+          values:points,
+          autoRotate:["x","y","rotation",90*Math.PI/180,true]
+        },
+        repeat:-1,
+        ease:Linear.easeNone
+      });
+
+      bg.interactive = true;
+
+      bg.on("pointertap",function (){
+        console.log(1);
+        fight.gotoAndPlay(0);
+      });
+
+
+    }
+  };
+
+  var loader = new PIXI.loaders.Loader();
+  loader.add("images/fighter.json");
+  loader.load(function (){
+    game.ready();
+  });
+
+};
+
+threeRender();
+pixiRender();
+
+}
+</script>
+</body>
+</html>
