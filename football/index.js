@@ -3,7 +3,7 @@ var app = new PIXI.Application(640,1030,{backgroundColor:0x000000});
 var loader = new PIXI.loaders.Loader();
 loader.add(["images/complete.jpg","images/football.png","images/footballField.jpg"]);
 loader.on("progress",function (lod){
-	document.getElementById("num").innerHTML = lod.progress + "%";
+	document.getElementById("num").innerHTML = Math.floor(lod.progress) + "%";
 });
 loader.load(start);
 
