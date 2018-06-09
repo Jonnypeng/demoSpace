@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>阳光城：票选轻生活代言人</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<include file='Pubilc/static' />
+	<style>
+	.none{
+		display:none;
+	}
+	section .mui-row .conter {
+    width: 44%;
+    background: #FFFFFF;
+    float: left;
+		margin: 0% 3%;
+}
+.index_name {
+    transform: translateY(10px);
+}
+section .mui-row .conter .conter-img {
+    width: 100%;
+    height: auto;
+    position: relative;
+		padding-bottom: 0%;
+}
+.index_top {
+    color: #96ef17;
+}
+nav{
+	text-align:center;
+	margin-top: 3%;
+}
+.btn-top {
+    margin: 0px;
+}
+img.img-responsive {
+    width: 100%;
+    height: auto;
+}
+.num {
+    -webkit-transform: translateY(4px);
+}
+
+	</style>
+</head>
+<body>
+	<div class="top"><img src="__PUBLIC__/Home/img/top_pic.png"></div>
+	<section>
+		<nav>
+			<div class="btn btn-top btn-default eventBtn" data-toggle="modal" data-target="#eventInfo">活动介绍</div>
+			<div class="btn btn-top btn-default awardBtn" data-toggle="modal" data-target="#awardInfo">奖品介绍</div>
+			<div class="btn btn-top btn-default joinBtn">我要参加</div>
+			<div class="btn btn-top btn-default searchBtn">搜索选手</div>
+			<!--<div id="search" class="" style="display:none;margin: 5% 20%; margin-bottom: 10px;">
+				<input type="text" class="form-control" id='name' name='name' style="" placeholder="请输入姓名">
+				<span class="glyphicon glyphicon-search" style=" "></span>
+			</div>-->
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="input-group">
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+		</nav>
+		<ul class="mui-row lists" id="item10" style="display: flex;flex-wrap: wrap;"></ul>
+
+		<!--活动介绍-->
+		<div class="modal fade" id="eventInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					活动介绍
+				</h4>
+			</div>
+			<div class="modal-body">
+				<img src="__PUBLIC__/Home/img/eventInfo.png" alt="" class="img-responsive">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div>
+	</div><!-- /.modal -->
+
+<!--奖品介绍-->
+<div class="modal fade" id="awardInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			&times;
+		</button>
+		<h4 class="modal-title" id="myModalLabel">
+			奖品介绍
+		</h4>
+	</div>
+	<div class="modal-body">
+		<img src="__PUBLIC__/Home/img/awardInfo.png" alt="" class="img-responsive">
+		<h4 class="text-center">奖品名称</h4>
+		<p>在动画制作中，定格动画是一种历史悠久的技术。它非常地耗时耗力。如今，随着计算机技术的发展，使用定格动画技术的公司已经不多了。不过，自从 2006 年以来，动画公司 Laika 一直坚持定格动画，并且进行了大胆创新。其中，通过 3D 打印技术的应用，动画制作人员的劳动强度大大降低，可以把精力放在更有创造性的工作上。</p>
+		<img src="__PUBLIC__/Home/img/awardInfo.png" alt="" class="img-responsive">
+		<h4 class="text-center">奖品名称</h4>
+		<p>在动画制作中，定格动画是一种历史悠久的技术。它非常地耗时耗力。如今，随着计算机技术的发展，使用定格动画技术的公司已经不多了。不过，自从 2006 年以来，动画公司 Laika 一直坚持定格动画，并且进行了大胆创新。其中，通过 3D 打印技术的应用，动画制作人员的劳动强度大大降低，可以把精力放在更有创造性的工作上。</p>
+		<img src="__PUBLIC__/Home/img/awardInfo.png" alt="" class="img-responsive">
+		<h4 class="text-center">奖品名称</h4>
+		<p>在动画制作中，定格动画是一种历史悠久的技术。它非常地耗时耗力。如今，随着计算机技术的发展，使用定格动画技术的公司已经不多了。不过，自从 2006 年以来，动画公司 Laika 一直坚持定格动画，并且进行了大胆创新。其中，通过 3D 打印技术的应用，动画制作人员的劳动强度大大降低，可以把精力放在更有创造性的工作上。</p>
+		<img src="__PUBLIC__/Home/img/awardInfo.png" alt="" class="img-responsive">
+		<h4 class="text-center">奖品名称</h4>
+		<p>在动画制作中，定格动画是一种历史悠久的技术。它非常地耗时耗力。如今，随着计算机技术的发展，使用定格动画技术的公司已经不多了。不过，自从 2006 年以来，动画公司 Laika 一直坚持定格动画，并且进行了大胆创新。其中，通过 3D 打印技术的应用，动画制作人员的劳动强度大大降低，可以把精力放在更有创造性的工作上。</p>
+		<img src="__PUBLIC__/Home/img/awardInfo.png" alt="" class="img-responsive">
+		<h4 class="text-center">奖品名称</h4>
+		<p>在动画制作中，定格动画是一种历史悠久的技术。它非常地耗时耗力。如今，随着计算机技术的发展，使用定格动画技术的公司已经不多了。不过，自从 2006 年以来，动画公司 Laika 一直坚持定格动画，并且进行了大胆创新。其中，通过 3D 打印技术的应用，动画制作人员的劳动强度大大降低，可以把精力放在更有创造性的工作上。</p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+		</button>
+	</div>
+</div><!-- /.modal-content -->
+</div>
+</div><!-- /.modal -->
+
+	</section>
+	<!---预加载按钮-->
+	<section>
+		<div id='imgs' class="" style="width: 100%;height: 100%;position: fixed;z-index: 99;background: #0a0a0a;top: 0;display: none;"> </div>
+	</section>
+	<script src="/ygc_tp/Public/Home/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() {
+		FastClick.attach(document.body);
+	}, false);
+
+	var limt=0;
+	var limtsum=4;
+	var html;
+	var botn=0;
+	var total_false=false
+	var yuc=1;
+	index_toupiao();
+	$('#name').keyup(function(){
+		var name=$(this).val();
+
+		name=clearBr(name);
+		name=LTrim(name);
+		name=RTrim(name);
+		name=trim(name);
+		if(name!=''){
+			if(CheckChinese(name)){
+				html='';
+				console.log(name);
+				$('#item10 li').remove();
+				index_toupiao(name);
+			}
+		}else{
+			if(!html){
+				html='';
+				console.log(name);
+				index_toupiao();
+			}
+
+		}
+	})
+	$(window).scroll(function(){
+		//滚动条所在位置的高度
+		var name=$('#name').val();
+		if(name){
+			return false;
+		}
+		if(botn){
+			return false;
+		}
+		if(total_false){
+			return false;
+		}
+		windowTop= document.body.scrollTop;
+		//当前文档高度   小于或等于   滚动条所在位置高度  则是页面底部
+		if(windowTop>= yuc*240) {
+			//页面到达底部
+			var count=Number('{$count}');
+			if(limt+4>count){
+				return false;
+			}
+			limt=limt+4;
+			html='';
+			yuc=yuc+2;
+			index_toupiao();
+		}
+	});
+
+	function index_toupiao(name){
+		if(name){
+			limt=0;
+			data={name:name};
+		}else{
+			data={limt:limt,limtsum:limtsum};
+		}
+		$.post("{:U('Api/Access/index_toupiao')}",data,function(data){
+			if(data.status==100){
+				var result=data.result;
+
+				for(var i=0;i<result.length;i++){
+					if(!result[i].piao){
+						result[i].piao=0;
+					}
+					var item='<li class="conter" data="94"><div id="" style="display: block;"><div class="index_top" style="width: 30%;float: left;font-size: 2.0em;text-align: center" id=""><i>'+(i+1+limt)+'</i><br /></div>	<div class="index_name" style="width: 70%;float: left;" id=""><i>姓名：</i>'+result[i].name+'<br /></div>	</div>	<div class="conter-img headimg" > <a href="{:U('details')}?id='+result[i].openid+'">	<img src="'+result[i].url+'" /></a></div>	<p class="conter_mune">	<div id="" style="display: block;">	<div class="num" style="width: 70%;float: left;padding-top: 10px;" id=""><i style="font-style:normal;">当前得票：</i><span id="piaos'+result[i].id+'">'+result[i].piao+'</spna>	 	</div>	<div style="width: 30%;float: left;padding-top: 10px;" id=""><span class="do_vote" style="text-align: center;border-radius: 4px;display: block;font-size: 14px;color: #fff;background: #ff8e4b;border-color: #ff8e4b;" data-id="'+result[i].id+'">投票</span><br />	</div></div><div></div></li>';
+					if(html){
+						html=html+item;
+					}else{
+						html=item;
+					}
+				}
+
+				$('#item10').append(html);
+				total_false=false
+			}
+		})
+	}
+	$('.span_nav').click(function(){
+		var val=$(this).attr('val');
+		botn=1;
+		html='';
+		console.log(name);
+		$('#item10 li').remove();
+		index_toupiao(val);
+	})
+	//去除换行
+	function clearBr(key)
+	{
+		key = key.replace(/<\/?.+?>/g,"");
+		key = key.replace(/[\r\n]/g, "");
+		return key;
+	}
+
+	//去除左侧空格
+	function LTrim(str)
+	{
+		return str.replace(/^\s*/g,"");
+	}
+	//去右空格
+	function RTrim(str)
+	{
+		return str.replace(/\s*$/g,"");
+	}
+	//去掉字符串两端的空格
+	function trim(str)
+	{
+		return str.replace(/(^\s*)|(\s*$)/g, "");
+	}
+	function CheckChinese(val){
+		var reg = new RegExp("[\\u4E00-\\u9FFF]+","g");
+		if(reg.test(val)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	$('#item10').on('click','span',function(){
+		var id=$(this).attr('data-id');
+		data={id:id};
+		$.post("{:U('Api/Access/toupiao')}",data,function(data){
+			if(data.status==0){
+				alert('活动提示:每人每天只能投票一次。');
+			}else if(data.status==100){
+				alert('投票成功');
+				$('#piaos'+id).text(parseInt($('#piaos'+id).text())+1);
+				//window.location.href='';
+			}
+		})
+	})
+
+	/*colse search bar*/
+	var searchClose = true;
+	$(".searchBtn").on("click",function (){
+		if(searchClose){
+			$(this).attr({
+				"class":"btn btn-top btn-success searchBtn"
+			});
+			$("#search").slideDown();
+			$(this).text("关闭搜索");
+			searchClose = false;
+		}else{
+			$(this).attr({
+				"class":"btn btn-top btn-default searchBtn"
+			});
+			$("#search").slideUp();
+			searchClose = true;
+			$(this).text("搜索选手");
+		}
+	});
+
+	$(".joinBtn").on("click",function (){
+		location.href = "http://wx.uvcsi.com/html5/ygc/tpbm/index.php";
+	});
+
+	</script>
+</body>
+</html>

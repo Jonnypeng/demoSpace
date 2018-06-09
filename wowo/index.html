@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../lib/css/animate.css">
+  <style>
+    #box {
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background: black;
+    }
+
+    img.rect {
+      width: 10%;
+      margin-bottom: -5px;
+    }
+
+    div#preload {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
+      top: 0;
+      left: 0;
+    }
+
+    .loadtext {
+      color: white;
+      width: 100%;
+      text-align: center;
+      margin-top: 80%;
+      font-size: 24px;
+    }
+  </style>
+</head>
+
+<body style="margin:0px">
+  <div id="box">
+    <img src="images/firest.jpg" alt="" style='width:100%;height:auto'>
+  </div>
+  <div id="preload">
+    <div class="loadtext">loading</div>
+  </div>
+  <script src="../lib/js/pixi.min.js"></script>
+  <script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/wow.js"></script>
+  <script src="js/manifest.js"></script>
+  <script>
+    window.onload = init;
+
+    function init() {
+
+      var url = "images/a1_";
+      var ani = [
+        "fadeInLeft",
+        "fadeInRight",
+        "fadeInTop",
+        "fadeInBottom"
+      ];
+      var index = 0;
+
+      var loader = new PIXI.loaders.Loader();
+      loader.add(manifest);
+      loader.load(start);
+
+      function start() {
+        $("#preload").hide();
+        for (var i = 1; i < 1291; i++) {
+          i = (i < 10) ? "0" + i : i;
+          var img = document.createElement("img");
+          img.id = "a" + i;
+          index++;
+          index = index % ani.length;
+          $(img).addClass("rect wow " + ani[index]);
+          $(img).attr({
+            "data-wow-duration": "1s"
+          });
+          img.src = url + i + ".png";
+          $("#box").append(img);
+        };
+
+
+        var wow = new WOW(
+          {
+            boxClass: 'wow',      // default
+            animateClass: 'animated', // default
+            offset: 0,          // default
+            mobile: true,       // default
+            live: true        // default
+          }
+        )
+        wow.init();
+
+
+      };
+    };
+  </script>
+</body>
+
+</html>

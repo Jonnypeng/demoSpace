@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>当足球铺满，点击屏幕</title>
+		<link rel="stylesheet" href="../lib/css/reset.min.css">
+		<link rel="stylesheet" href="../lib/css/main.css">
+		<link rel="stylesheet" href="style.css">
+    <style>
+      canvas#matter{
+        background:rgba(0,0,0,0) !important;
+      }
+    </style>
+</head>
+<body>
+		<div id="box">
+		</div>
+    <!--<div id="matterRender">
+      <canvas id="matter"></canvas>
+    </div>-->
+		<div id="preload">
+				<img src="../lib/images/preloadBg.jpg" alt="" class='bgImg' id='preloadBg'>
+				<img src="../lib/images/icon.jpg" alt="" id='logo'>
+			<div id="num"></div>
+			<div id="name">Powered by Jonny Peng</div>
+		</div>
+    <script src="../lib/js/jquery.min.js"></script>
+    <script src='../lib/js/pixi.min.js'></script>
+    <script src='../lib/js/TweenMax.min.js'></script>
+    <script src='../lib/js/matter.min.js'></script>
+    <script src='index.js'></script>
+</body>
+</html>
